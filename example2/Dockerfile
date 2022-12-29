@@ -1,5 +1,11 @@
 FROM python:3.9
 
+# TARGETPLATFORM: Platform of the build result. Uses default unless the target
+# platform is specified with the --platform flag on docker build.
+ARG TARGETPLATFORM
+
+RUN echo "TARGETPLATFORM: Docker is building for $TARGETPLATFORM"
+
 WORKDIR /code
 
 COPY ./requirements.txt /code/requirements.txt
