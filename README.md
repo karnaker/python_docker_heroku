@@ -21,7 +21,7 @@ _Learn how to dockerize Python scripts and a Python web app and deploy to Heroku
 * Push a multi-arch image to the GitHub Container Registry
    * Save your GitHub personal access token as an environment variable: `export CR_PAT=YOUR_TOKEN`
    * Sign in to the GitHub Container registry service at `ghcr.io`: `echo $CR_PAT | docker login ghcr.io -u USERNAME --password-stdin`
-   * Push multi-arch image to GitHub Container Registry: `docker buildx build --push --platform linux/amd64,linux/arm64 --tag ghcr.io/karnaker/python_docker_heroku:latest .`
+   * Push multi-arch image to GitHub Container Registry: `docker buildx build --push --platform linux/amd64,linux/arm64 --tag ghcr.io/USERNAME/python_docker_heroku:latest .`
 * Push a multi-arch (ish) image to the Heroku Container Registry (note: Heroku will only accept linux/amd64 images, hence the "ish")
    * Log in to Heroku: `heroku login`
    * Log in to the Heroku container registry: `heroku container:login`
@@ -31,7 +31,6 @@ _Learn how to dockerize Python scripts and a Python web app and deploy to Heroku
 * References
    * Heroku
       * [Container Registry & Runtime (Docker Deploys)](https://devcenter.heroku.com/articles/container-registry-and-runtime)
-      * [Create a Heroku remote](https://devcenter.heroku.com/articles/git#create-a-heroku-remote)
    * GitHub
       * [GitHub: Working with the Container registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
       * [YouTube: GitHub Packages.. Containers in a GitHub repo?](https://youtu.be/gqseP_wTZsk)
